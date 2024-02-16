@@ -1,55 +1,35 @@
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 export function NavBar(){
   return(
     <>
-<nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div className="container-fluid">
-    <a className="navbar-brand hoverFX d-inline-block align-text-center" href="#/"><img src="./IMG/Logo - Just Wolves.png" alt="Lobo-Guara Logo" width="35" height="35"/> BigBadWolf Bank</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to Home page" href="#/">Home</a>
-        </li>
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to Account Creation page" href="#/CreateAccount">Create Account</a>
-        </li>
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to Login page"  href="#/login">Login</a>
-        </li>
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to Deposit page" href="#/deposit">Deposit</a>
-        </li>
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to Withdraw page" href="#/withdraw">Withdraw</a>
-        </li>
-        <li className="nav-item hoverFX">
-          <a className="nav-link" title="go to All Data page" href="#/alldata">AllData</a>
-        </li>
-      </ul>
-        {/* <li className="nav-item hoverFX dropdown"> // move inside of UL
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li> */}
-      <form className="d-flex">
-        <a href="https://theobueno.github.io/Home/bio_page.html" target=""> 
-          <img width="40" height="40" src="./IMG/Logo Pure - Dark.png" alt="Lobo-Guara Dark-Circle logo" />
-        </a>      
-            {/* <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Search</button>*/}
-            </form> 
-          </div>
-        </div>
-      </nav>
+    <Navbar expand="lg" className="navbar-dark bg-dark"> {/*classNames: sticky-top or bg-body-tertiary */}
+      <div className="container-fluid">
+      <Navbar.Brand href="#" className='hoverFX d-inline-block align-text-center'>
+        <img src="./IMG/Logo - Just Wolves.png" alt="Lobo-Guara Logo" width="35" height="35"/>{/*padding-right='5px'*/}{' '}
+        BigBadWolf Bank
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto hoverFX">
+          <Nav.Link title="go to Home page"        href="#/">Home</Nav.Link> {/*classNames: nav-item  */}
+          <Nav.Link title="go to Account Creation" href="#/CreateAccount">Create Account</Nav.Link>
+          <Nav.Link title="go to Login page"       href="#/login">Login</Nav.Link>
+          <NavDropdown className="hoverFX" title="Account" id="basic-nav-dropdown" >
+            <NavDropdown.Item title="go to Deposit page"  href="#/deposit">Deposit    </NavDropdown.Item>
+            <NavDropdown.Item title="go to Withdraw page" href="#/withdraw">Withdraw   </NavDropdown.Item>
+        {/* <NavDropdown.Item href="#action/3.3">Something  </NavDropdown.Item> */}
+            <NavDropdown.Divider />
+            <NavDropdown.Item title="go to All Data page" href="#/alldata">AllData      </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <a title="my Github page" href="https://theobueno.github.io/Home/bio_page.html" target=""> 
+        <img width="40" height="40" src="./IMG/Logo Pure - Dark.png" alt="Lobo-Guara Dark-Circle logo"/></a>
+      </Navbar.Collapse>
+      </div>
+    </Navbar>
     </>
   );
 }
