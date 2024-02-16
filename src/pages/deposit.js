@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { useState, useContext }   from 'react';
 import { Card, RecurringContext } from './context';
 import axios from "axios";
@@ -8,11 +8,10 @@ export function Deposit() {
   const [show, setShow] = useState(true)
   const [dep, setDep]   = useState(0)
   const [disabled, setDisabled] = useState(true)
-  // const [activeUser, setActiveUser] = useState()
   const [status, setStatus]     = useState('')
   const ctx = useContext(RecurringContext);
 
-function validate(balance, dep) { //Both 'NaN' and 'negative' validations can be skipped by using 'type="number"' with 'min={0}' instead of 'type="input"', to verify other alerts, you can uncomment at 'Return' below.
+function validate(balance, dep) {
   if (isNaN(dep)) {
     setStatus('Deposit Input is Not a Number, please try again.')
     setTimeout(() => setStatus(''), 10000);
@@ -64,10 +63,6 @@ function clearForm() {
           placeholder="Deposit Amount" min={0} value={dep}
           onChange={e =>{setDisabled(false); setDep((e.target.value))}} />
           <br/>
-          {/* <input type="input" className="form-control" id="Deposit"
-          placeholder="Deposit Amount" value={dep}
-          onChange={e =>{setDisabled(false); setDep((e.target.value))}} />
-          <br/> */}
           <button disabled={disabled}  type="submit" className="btn btn-light"
           onClick={updateBalance}>Deposit</button>
 

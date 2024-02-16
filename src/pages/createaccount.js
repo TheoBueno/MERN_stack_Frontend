@@ -24,9 +24,8 @@ export function CreateAccount(){
 function CreateMsg(props){
   return(<>
     <h5>Success</h5>
-    <button type="submit" 
-      className="btn btn-light" 
-      onClick={() => props.setShow(true)}>Add another account</button>
+    <button type="submit" className="btn btn-light" onClick={() => props.setShow(true)}>Add another account</button>
+    <a className="btn btn-secondary" title="go to Login page"  href="#/login">Login</a>  
   </>);
 }
 

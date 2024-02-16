@@ -1,4 +1,4 @@
-import React/*, { useContext }*/  from 'react';
+// import React/*, { useContext }*/  from 'react';
 import { Route, Routes }      from "react-router-dom";
 import { CreateAccount }      from "./pages/createaccount";
 import { Home }               from "./pages/home";
@@ -9,6 +9,7 @@ import { AllData }            from "./pages/alldata";
 import { NavBar }             from "./pages/navbar";
 import './App.css';
 import { RecurringContext } from './pages/context';
+
 
 
 export default function App() {

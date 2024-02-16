@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { useState, useContext, useEffect } from 'react'
 import { Card, RecurringContext }          from './context';
 import axios from "axios";
@@ -9,9 +9,6 @@ export function Login() {
   const [password, setPassword]   = useState('')
   const [disabled, setDisabled]   = useState(true)
   const [status, setStatus]       = useState('')
- // const [validUser, setValidUser] = useState(false)
-
- // const [localCtx, setLocalCtx] = useState([])
 	const ctx = useContext(RecurringContext);
   const backendUrl = process.env.REACT_APP_BACKEND_URL
 
@@ -22,22 +19,7 @@ export function Login() {
     } else {setShow(false)}
   }, [ctx.users] )
 
-  // useEffect(() => {
-  //   if (validUser) {
-  //     const backendUrl = process.env.REACT_APP_BACKEND_URL
-  //     const url2 = `${backendUrl}/account/login/${email}/${password}`;
-  //     (async () => {
-  //       const  { data } = await axios.get(url2);
-  //       await ctx.users.splice(1, 0,{name:data.name, email:data.email, balance:data.balance})
-  //       ctx.users[1].firstName = await FirstOnly(ctx.users[1].name)
-  //     })();      console.log('local ctx has been updated. User is Logged in:')
-  //     console.log(ctx.users)
-  //     ctx.users[0].isAnyoneLoggedIn = true
-  //     setShow(false)
-  //   }
-  // }, [validUser, ctx.users, email, password]);
-
-  function validate(field, label) { //label = word email 
+  function validate(field, label) {
     if (!field) {
       setStatus('Error - ' + label + ' field is empty.')
       setTimeout(() => setStatus(''), 3000);
@@ -70,26 +52,13 @@ export function Login() {
     setShow(true)
   }
 
-  // async function afterLogin() {
-  //   const url2 = `${backendUrl}/account/login/${email}/${password}`;
-  //   (async () => {
-  //     const  { data } = await axios.get(url2);
-  //     await ctx.users.splice(1, 0,{name:data.name, email:data.email, balance:data.balance})
-  //     ctx.users[1].firstName = await FirstOnly(ctx.users[1].name)
-  //   })();
-  // }
-
   async function matchLogin() {
     console.log('Login attempted - email:' + email + " pw:" + password)
     if (!validate(email,    'email'))     return; 
     if (!validate(password, 'password'))  return; 
 
     const url1 = `${backendUrl}/account/pwemlval/${email}/${password}`
-    //console.log(url1)
-    //let valid = false
-    try {
-      //valid = 
-      
+    try {     
       await axios.get(url1)
         .then(function (response) {          // handle success
           console.log(response.data);
@@ -101,34 +70,12 @@ export function Login() {
           })();
           setShow(false)
         })
-        .catch(function (error) {          // handle error
-
+        .catch(function (error) {          
           console.log(error.data);
-        })
-        .finally(function () {          // always executed
-
         });
-      
-      
-     //  .then( response => {if( response === null){ return }}).then(console.log(valid))
-     //   await setValidUser(valid)
-
-      /*      
-      if(!valid){
-      console.log('login attempt not successful')
-      return;
-    }else{
-      setValidUser(true)
-      console.log(`valid is ${valid}`)
-      afterLogin()
-    }  
-*/
-
     } catch (e) {
       console.log(e.message)
-    }
-    
-    
+    }   
   }
 
   return ( 
@@ -144,8 +91,7 @@ export function Login() {
 			  login: ditto_boy@nintendo.js<br/>
         PW: copyeverything
         <br/> <br/>
-        
-
+      
         Email address<br/>
         <input type="input" className="form-control" id="email"
         placeholder="Enter email" value={email} 

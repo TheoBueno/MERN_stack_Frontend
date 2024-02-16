@@ -1,8 +1,6 @@
-import React from 'react';
+//import React from 'react';
 import { useState, useContext, useEffect } from 'react'
 import { Card, RecurringContext }          from './context';
-// import axios from "axios"; // replace calls from fetch to axios 
-
 
 export function AllData() {
 	const [adminAccess, setAdminAccess] = useState(true); //TODO: DEVELOPMENT ONLY - Create Admin Access and Set it to False
@@ -12,8 +10,7 @@ export function AllData() {
 	const ctx = useContext(RecurringContext);
 
 
-useEffect(() => {
-	// fetch all accounts from API
+useEffect(() => { 	// fetch all accounts from API
 	fetch(`${backendUrl}/account/all`)
 		.then(response => response.json())
 		.then(data => {
@@ -93,10 +90,6 @@ function logStatus(user) {
 
 			<h5>For Dev Control: All data in store</h5>
 			{data}
-			
-			{/* {console.log(Math.random())} */}
-			{/* {console.log(localCtx.map((i)=> i.name) )} */}
-
 		</>
 	);
 }

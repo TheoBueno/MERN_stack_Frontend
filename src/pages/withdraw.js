@@ -1,11 +1,8 @@
-import React from 'react';
+//import React from 'react';
 import { useState, useContext }   from 'react';
 import { Card, RecurringContext } from './context';
 import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_URL
-// import Alert from 'react-bootstrap/Alert';
-// import Button from 'react-bootstrap/Button';
-
 
 export function Withdraw() {
   const [show, setShow] = useState(true)
@@ -14,7 +11,7 @@ export function Withdraw() {
   const [status, setStatus]     = useState('')
   const ctx = useContext(RecurringContext);
 
-function validate(balance, draw) { //Both 'NaN' and 'negative' validations can be skipped by using 'type="number"' with 'min={0}' instead of 'type="input"', to verify other alerts, you can uncomment at 'Return' below.
+function validate(balance, draw) {
   if (isNaN(draw)) {
     setStatus('Withdraw Input is Not a Number, please try again.')
     setTimeout(() => setStatus(''), 10000);
@@ -92,29 +89,3 @@ function clearForm() {
     />
   )
 }
-
-
-// ctx.users.forEach( e => { if(e.isLoggedIn == true){setActiveUser(e)}})
-
-// function AlertBS(message) {
-//   const [show, setShow] = useState(true);
-
-//   return ( 
-//     <>
-//       <Alert show={show} variant="success">
-//         <Alert.Heading>Error Message:</Alert.Heading>
-//         <p>
-//           {message}
-//         </p>
-//         <hr />
-//         <div className="d-flex justify-content-end">
-//           <Button onClick={() => setShow(false)} variant="outline-success">
-//             Try Again.
-//           </Button>
-//         </div>
-//       </Alert>
-
-//       {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
-//     </>
-//   );
-// }
