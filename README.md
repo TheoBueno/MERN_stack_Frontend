@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Project Title: BBW Bank - the MERN Stack BigBadWolf Bank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project's frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is availble for forking at the [Frontend_Repo](https://github.com/TheoBueno/MERN_stack_Frontend), while it's backend was created with [Node](https://nodejs.org/en) & [Nodemon](https://nodemon.io/), and is available for forking at the [Backend_Repo] (https://github.com/TheoBueno/MERN_stack_Backend).
 
-## Available Scripts
+## Description/Motivation
 
-In the project directory, you can run:
+## Installation Guidelines & Available Scripts:
+Firstly, make sure to fork or copy both the [frontend](https://github.com/TheoBueno/MERN_stack_Frontend) and [backend](https://github.com/TheoBueno/MERN_stack_Backend) from their Git Repositories.
+
+In the project's backend directory, you can run "npm run dev", meanwhile in the project's frontend directory you can run "npm start".
+
+### `npm run dev`
+```
+$ npm run dev
+```
+Runs the code with nodemon for constantly updating the server while making alterations to the code for development 
 
 ### `npm start`
-
+```
+$ npm start
+```
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
-
+```
+$ npm run build
+```
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `Screenshots`
 
-### `npm run eject`
+## `Technology used`
+  Core Programs - MERN Stack: [MongoDB](https://www.npmjs.com/package/mongodb), [Express](https://www.npmjs.com/package/express), [React](https://www.npmjs.com/package/react) & [Node](https://www.npmjs.com/package/node);
+  Also used: [body-parser](https://www.npmjs.com/package/body-parser), [cors](https://www.npmjs.com/package/cors), [dotenv](https://www.npmjs.com/package/dotenv), [mongoose](https://www.npmjs.com/package/mongoose), [axios](https://www.npmjs.com/package/axios) & [bootstrap](https://www.npmjs.com/package/bootstrap).
+  Development only Dependency: nodemon,
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## `Features`
+The App is focussed on providing the functionality of an online bank, capable of holding accounts information on a database, and update each individual account's balance based on prompts from actions executed on the frontend, using calls to the back end, to deposit or withdraw ammounts.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Account Creation:
+  Creates new accounts and adds them to the database.
+### Login:
+  Logs the website to one account in particular from the database.
+### Deposit:
+  Adds money to the balance of the current logged in account.
+### Withdraw:
+  Withdraws money from the balance of the currently logged in account.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## `License Used`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### MIT License:
 
-## Learn More
+Copyright (c) 2024 TheoBueno
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
