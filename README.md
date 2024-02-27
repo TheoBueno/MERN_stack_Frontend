@@ -77,8 +77,7 @@ In addition to creating two 'web services' for deployment using Render, one for 
 
 ## `Screenshots`
 
- <img src="https://i.imgur.com/uf9ZruG.png" alt="Landing Page" width="200px"/>
- <img src="https://i.imgur.com/0PF1XyK.png" alt="Create Account" width="200px"/>
+ <img src="https://i.imgur.com/uf9ZruG.png" alt="Landing Page" width="380px"/><img src="https://i.imgur.com/0PF1XyK.png" alt="Create Account" width="380px"/>
 
 
 ## `Technology`
