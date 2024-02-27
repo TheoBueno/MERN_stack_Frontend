@@ -1,13 +1,13 @@
 # Project Title: BBW Bank - the MERN Stack BigBadWolf Bank
 
-This project's frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is availble for forking at the [Frontend_Repo](https://github.com/TheoBueno/MERN_stack_Frontend), while it's backend was created with [Node](https://nodejs.org/en) & [Nodemon](https://nodemon.io/), and is available for forking at the [Backend_Repo] (https://github.com/TheoBueno/MERN_stack_Backend).
+This project's frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is availble for forking at the [Frontend_Repo](https://github.com/TheoBueno/MERN_stack_Frontend), while it's backend was created with [Node](https://nodejs.org/en) & [Nodemon](https://nodemon.io/), and is available for forking at the [Backend_Repo](https://github.com/TheoBueno/MERN_stack_Backend).
 
 ## Table of Contents:
 1. [Motivation](#motive)
 2. [Installation Guidelines](#inst)
-    A. [Database](#database)
-    B. [Backend](#backend-dev)
-    C. [Frontend](#frontend-dev)
+    1. [Database](#database)
+    2. [Backend](#backend-dev)
+    3. [Frontend](#frontend-dev)
 3. [Screenshots](#Screenshots)
 4. [Technology](#Technology)
 5. [Features](#Features)
@@ -77,17 +77,16 @@ In addition to creating two 'web services' for deployment using Render, one for 
 
 ## `Screenshots`
 
-![](https://i.imgur.com/uf9ZruG.png)
-![](https://i.imgur.com/0PF1XyK.png)
+![](https://i.imgur.com/uf9ZruG.png)![](https://i.imgur.com/0PF1XyK.png)
 
 
 ## `Technology`
-  Core Programs - MERN Stack: [MongoDB](https://www.npmjs.com/package/mongodb), [Express](https://www.npmjs.com/package/express), [React](https://www.npmjs.com/package/react) & [Node](https://www.npmjs.com/package/node);
-  Also used: [body-parser](https://www.npmjs.com/package/body-parser), [cors](https://www.npmjs.com/package/cors), [dotenv](https://www.npmjs.com/package/dotenv), [mongoose](https://www.npmjs.com/package/mongoose), [axios](https://www.npmjs.com/package/axios) & [bootstrap](https://www.npmjs.com/package/bootstrap).
-  Development only Dependency: nodemon,
+  Core Programs - MERN Stack: [MongoDB](https://www.npmjs.com/package/mongodb), [Express](https://www.npmjs.com/package/express), [React](https://www.npmjs.com/package/react) & [Node](https://www.npmjs.com/package/node).\
+  Periferal Programs: [body-parser](https://www.npmjs.com/package/body-parser), [cors](https://www.npmjs.com/package/cors), [dotenv](https://www.npmjs.com/package/dotenv), [mongoose](https://www.npmjs.com/package/mongoose), [axios](https://www.npmjs.com/package/axios) & [bootstrap](https://www.npmjs.com/package/bootstrap).\
+  Development Program: [nodemon](https://www.npmjs.com/package/nodemon).
 
 ## `Features`
-The App is focussed on providing the functionality of an online bank, capable of holding accounts information on a database, and update each individual account's balance based on prompts from actions executed on the frontend, using calls to the back end, to deposit or withdraw ammounts.
+The App is focussed on providing the functionality of an online bank, capable of holding accounts information on a database, and update each individual account's balance based on prompts from actions executed on the frontend, using calls to the back end, to either deposit or withdraw ammounts.
 
 ### Account Creation:
   Creates new accounts and adds them to the database.
