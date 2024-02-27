@@ -2,30 +2,60 @@
 
 This project's frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is availble for forking at the [Frontend_Repo](https://github.com/TheoBueno/MERN_stack_Frontend), while it's backend was created with [Node](https://nodejs.org/en) & [Nodemon](https://nodemon.io/), and is available for forking at the [Backend_Repo] (https://github.com/TheoBueno/MERN_stack_Backend).
 
-## Description/Motivation
+## Table of Contents:
+1. [Motivation](#motive)
+2. [Installation Guidelines](#inst)
+    A. [Backend](#backend-dev)
+    B. [Frontend](#frontend-dev)
+3. [Screenshots](#Screenshots)
+4. [Technology](#Technology)
+5. [Features](#Features)
+6. [License](#License) 
 
-## Installation Guidelines & Available Scripts:
-Firstly, make sure to fork or copy both the [frontend](https://github.com/TheoBueno/MERN_stack_Frontend) and [backend](https://github.com/TheoBueno/MERN_stack_Backend) from their Git Repositories.
+## Motivation <a name="motive"></a>
 
-In the project's backend directory, you can run "npm run dev", meanwhile in the project's frontend directory you can run "npm start".
 
-### `npm run dev`
+## <a name="inst"></a> Installation Guidelines & Available Scripts: 
+Firstly, make sure to fork or copy both the [frontend](https://github.com/TheoBueno/MERN_stack_Frontend) and [backend](https://github.com/TheoBueno/MERN_stack_Backend) from their Git Repositories.\
+We recommend keeping both within the same directory in your computer for easy access. If using VS Code it's ideal to open the containing directory to view the entirety of the project.
+
+### `Backend Dev`
+Once you have a copy both repos in your computer, you will need to create a '.env' file, with the following lines:
 ```
+REACT_APP_MONGO_URI   = 'URI' #(replace URI here with the uri to your database) 
+REACT_APP_SERVERPORT  = PORT1  #(replace PORT1 here with the number of the port you are using, such as 8080) 
+```
+Then from a terminal inside the project's backend directory run the following commands:
+```
+$ npm install
 $ npm run dev
 ```
-Runs the code with nodemon for constantly updating the server while making alterations to the code for development 
+Runs the Backend in the development mode using nodemon.\
+Got to [http://localhost:PORT1](http://localhost:8080) to confirm functionality of it in your browser.
 
-### `npm start`
+The page will reload as you make changes to your code - works similar to React.\
+Keep an eye on your terminal for prompts of feedback.
+
+### `Frontend Dev`
+meanwhile you will need to create a '.env' file here as well, with the following lines:
 ```
+REACT_APP_BACKEND_URL = 'URL' #(replace URL here with the url to your backend, such as 'http://localhost:PORT1') 
+REACT_APP_MONGO_URI   = 'URI' #(replace URI here with the uri to your database) 
+REACT_APP_PORT        = PORT2  #(replace PORT2 here with the number of the port you are using, such as 3000)
+```
+Then from a terminal inside the project's frontend directory run the following commands:
+```
+$ npm install
 $ npm start
 ```
 Runs the app in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+Got to [http://localhost:PORT2](http://localhost:3000) in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload as you make changes to your code - works similar to Nodemon.\
+Keep an eye on your terminal for prompts of feedback.\
+Make sure to have a different ports for front and backend.
 
-### `npm run build`
+### `Frontend Build`
 ```
 $ npm run build
 ```
@@ -34,9 +64,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 
+### `Deployment`
+For Deployment, in case the user does not yet have a setup account they often use for deploying similar projects on, such as Digital Ocean, or Heroku, one valid option for first time deployment is Render which can deploy from github. 
+
+In addition to creating two 'web services' for deployment using Render, one for front and one for the backend, both deploying from github, I used ENV variables that I then passed along their info at Enviroment 'key:value' slots, and creating a new cloud MongoDB at Atlas and connecting the three.
+
 ## `Screenshots`
 
-## `Technology used`
+
+## `Technology`
   Core Programs - MERN Stack: [MongoDB](https://www.npmjs.com/package/mongodb), [Express](https://www.npmjs.com/package/express), [React](https://www.npmjs.com/package/react) & [Node](https://www.npmjs.com/package/node);
   Also used: [body-parser](https://www.npmjs.com/package/body-parser), [cors](https://www.npmjs.com/package/cors), [dotenv](https://www.npmjs.com/package/dotenv), [mongoose](https://www.npmjs.com/package/mongoose), [axios](https://www.npmjs.com/package/axios) & [bootstrap](https://www.npmjs.com/package/bootstrap).
   Development only Dependency: nodemon,
@@ -53,7 +89,7 @@ The App is focussed on providing the functionality of an online bank, capable of
 ### Withdraw:
   Withdraws money from the balance of the currently logged in account.
 
-## `License Used`
+## `License`
 
 ### MIT License:
 
