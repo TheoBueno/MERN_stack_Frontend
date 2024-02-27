@@ -76,9 +76,10 @@ For Deployment, in case the user does not yet have a setup account they often us
 In addition to creating two 'web services' for deployment using Render, one for front and one for the backend, both deploying from github, I used ENV variables that I then passed along their info at Enviroment 'key:value' slots, and creating a new cloud MongoDB at Atlas and connecting the three.
 
 ## `Screenshots`
-
- <img src="https://i.imgur.com/uf9ZruG.png" alt="Landing Page" width="380px"/><img src="https://i.imgur.com/0PF1XyK.png" alt="Create Account" width="380px"/>
-
+<p float='left'>
+ <img src="https://i.imgur.com/uf9ZruG.png" alt="Landing Page" width="380px"/>
+ <img src="https://i.imgur.com/0PF1XyK.png" alt="Create Account" width="380px"/>
+</p>
 
 ## `Technology`
   Core Programs - MERN Stack: [MongoDB](https://www.npmjs.com/package/mongodb), [Express](https://www.npmjs.com/package/express), [React](https://www.npmjs.com/package/react) & [Node](https://www.npmjs.com/package/node).\
