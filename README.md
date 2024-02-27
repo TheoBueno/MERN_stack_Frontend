@@ -77,7 +77,9 @@ In addition to creating two 'web services' for deployment using Render, one for 
 
 ## `Screenshots`
 
-![](https://i.imgur.com/uf9ZruG.png)![](https://i.imgur.com/0PF1XyK.png)
+
+ <img src="(https://i.imgur.com/uf9ZruG.png)" width="200">
+ <img src="(https://i.imgur.com/0PF1XyK.png)" width="200">
 
 
 ## `Technology`
