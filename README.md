@@ -5,8 +5,9 @@ This project's frontend was bootstrapped with [Create React App](https://github.
 ## Table of Contents:
 1. [Motivation](#motive)
 2. [Installation Guidelines](#inst)
-    A. [Backend](#backend-dev)
-    B. [Frontend](#frontend-dev)
+    A. [Database](#database)
+    B. [Backend](#backend-dev)
+    C. [Frontend](#frontend-dev)
 3. [Screenshots](#Screenshots)
 4. [Technology](#Technology)
 5. [Features](#Features)
@@ -18,6 +19,11 @@ This project's frontend was bootstrapped with [Create React App](https://github.
 ## <a name="inst"></a> Installation Guidelines & Available Scripts: 
 Firstly, make sure to fork or copy both the [frontend](https://github.com/TheoBueno/MERN_stack_Frontend) and [backend](https://github.com/TheoBueno/MERN_stack_Backend) from their Git Repositories.\
 We recommend keeping both within the same directory in your computer for easy access. If using VS Code it's ideal to open the containing directory to view the entirety of the project.
+
+### `Database`
+Make sure to create a MongoDB database for this project. You will need it to be set up before the project is fully functional.
+You can set it up using MongoDB Desktop while in development, but using [MDB Atlas](https://www.mongodb.com/docs/atlas/getting-started/) is easy, starts free and cloud based, making it easy for deployment.\
+You also use [MDB Compass](https://www.mongodb.com/products/tools/compass) or [Studio 3T](https://studio3t.com/) as Free GUIs to manage the database from your desktop.
 
 ### `Backend Dev`
 Once you have a copy both repos in your computer, you will need to create a '.env' file, with the following lines:
@@ -70,6 +76,9 @@ For Deployment, in case the user does not yet have a setup account they often us
 In addition to creating two 'web services' for deployment using Render, one for front and one for the backend, both deploying from github, I used ENV variables that I then passed along their info at Enviroment 'key:value' slots, and creating a new cloud MongoDB at Atlas and connecting the three.
 
 ## `Screenshots`
+
+![](https://i.imgur.com/uf9ZruG.png)
+![](https://i.imgur.com/0PF1XyK.png)
 
 
 ## `Technology`
