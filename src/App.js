@@ -1,4 +1,3 @@
-// import React/*, { useContext }*/  from 'react';
 import { Route, Routes }      from "react-router-dom";
 import { CreateAccount }      from "./pages/createaccount";
 import { Home }               from "./pages/home";
@@ -8,17 +7,14 @@ import { Withdraw }           from "./pages/withdraw";
 import { AllData }            from "./pages/alldata";
 import { NavBar }             from "./pages/navbar";
 import './App.css';
-import { RecurringContext } from './pages/context';
-
-
+import { AppProvider }        from './pages/context';
 
 export default function App() {
-//  const ctx = useContext(RecurringContext)
 
   return (
-    <>
-    <NavBar/>
-    <RecurringContext.Provider value={{users:[{isAnyoneLoggedIn: false},{firstName:'User' , name: 'Guest User', email: 'Please Loggin to view.'}]}}>
+    <AppProvider>
+      <>
+      <NavBar/>
       <Routes >
           <Route path='/' exact         element={<Home />} />
           <Route path='/CreateAccount/' element={<CreateAccount />} />
@@ -27,6 +23,6 @@ export default function App() {
           <Route path='/withdraw/'      element={<Withdraw />} />
           <Route path='/alldata/'       element={<AllData />} />
       </Routes>
-    </RecurringContext.Provider>
-    </>
+      </>
+    </AppProvider>
 )}

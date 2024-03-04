@@ -1,6 +1,6 @@
 //import React from 'react';
 import { useState, useContext }   from 'react';
-import { Card, RecurringContext } from './context';
+import { Card, AppContext  } from './context';
 import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_URL
 
@@ -9,7 +9,7 @@ export function Withdraw() {
   const [draw, setDraw] = useState(0)
   const [disabled, setDisabled] = useState(true)
   const [status, setStatus]     = useState('')
-  const ctx = useContext(RecurringContext);
+  const ctx = useContext(AppContext );
 
 function validate(balance, draw) {
   if (isNaN(draw)) {
@@ -31,17 +31,17 @@ function validate(balance, draw) {
 }
 
 async function transaction(draw) {
-  const tran = await axios.get(`${backendUrl}/account/${ctx.users[1].email}/withdraw/${draw}`)
+  const tran = await axios.get(`${backendUrl}/account/${ctx.users[0].email}/withdraw/${draw}`)
   await console.log(tran.data)
 }
 
 function withdrawBal() {
   let newBal = 0
-  newBal = ctx.users[1].balance
+  newBal = ctx.users[0].balance
   if (!validate(newBal, draw))      return;
   transaction(draw)
   newBal -= draw
-  ctx.users[1].balance = newBal
+  ctx.users[0].balance = newBal
   setShow(false)
 }
 
@@ -59,14 +59,20 @@ function clearForm() {
       status  = {status}
       body    = {show ? (
         <>
-          <h3> Welcome {ctx.users[1].firstName}</h3>
+          <h3> Welcome {ctx.users.length > 0 && ctx.users[0].firstName}</h3>
           <br/>
-          <h5> Your current balance: ${ctx.users[1].balance}</h5>
+          <h5> Your current balance: ${ctx.users.length > 0 && ctx.users[0].balance}</h5>
           <br/>
           Withdraw Amount<br/>
-          <input type="number" className="form-control" id="withdraw"
-          placeholder="Withdraw Amount" min={0} value={draw}
-          onChange={e =>{setDisabled(false); setDraw((e.target.value))}} />
+          <input 
+            type="number" 
+            className="form-control" 
+            id="withdraw"
+            placeholder="Withdraw Amount"
+            autoComplete="off" 
+            min={0} 
+            value={draw}
+            onChange={e =>{setDisabled(false); setDraw((e.target.value))}} />
           <br/>
           <button disabled={disabled}  type="submit" className="btn btn-light"
           onClick={withdrawBal}>Withdraw</button>
@@ -77,7 +83,7 @@ function clearForm() {
         <>
           <h5>Operation Successful!</h5> <br/>
           <p>Your funds have been withdrawn.</p>
-          <h5>New Balance: ${ctx.users[1].balance}</h5>
+          <h5>New Balance: ${ctx.users[0].balance}</h5>
 
           <button type="submit" className="btn btn-light" onClick=
           {clearForm}>Another Operation</button>

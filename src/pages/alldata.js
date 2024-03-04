@@ -1,32 +1,24 @@
-//import React from 'react';
 import { useState, useContext, useEffect } from 'react'
-import { Card, RecurringContext }          from './context';
+import { Card, AppContext }          from './context';
 
 export function AllData() {
-	const [adminAccess, setAdminAccess] = useState(true); //TODO: DEVELOPMENT ONLY - Create Admin Access and Set it to False
 	const [data, setData] 							= useState('')
 	const [localCtx, setLocalCtx] 			= useState([])
+	const { users }											= useContext(AppContext);
+
   const backendUrl = process.env.REACT_APP_BACKEND_URL
-	const ctx = useContext(RecurringContext);
 
 
-useEffect(() => { 	// fetch all accounts from API
+useEffect(() => {
+	// Fetch all accounts from API
 	fetch(`${backendUrl}/account/all`)
 		.then(response => response.json())
 		.then(data => {
-			console.log(data)
-			setLocalCtx(data)
+//			console.log('Data:', data); // for development only
+			setLocalCtx(data);
 			setData(JSON.stringify(data));
-		})
-}, [backendUrl])
-
-useEffect(() => { //TODO: DEVELOPMENT ONLY - Create Admin Access and CHANGE THIS
-	// initial state of Users CTX
-	console.log(ctx.users)
-	if (!ctx.users[0].isAnyoneLoggedIn) {
-		setAdminAccess(true)
-	} else {setAdminAccess(false)}
-}, [ctx.users] )
+		});
+}, [backendUrl]);
 
 // Name Shown
 function FirstOnly(string) {
@@ -35,10 +27,10 @@ function FirstOnly(string) {
 }
 
 function logStatus(user) {
-	if (user.email === ctx.users[1].email) {
-		return 'Logged in';
+	if (user && user.email === users[0].email) {
+			return 'Logged in';
 	} else {
-		return 'Logged out';
+			return 'Logged out';
 	}
 }
 
@@ -52,7 +44,7 @@ function logStatus(user) {
 				header={'All Data - User 00' + j + ' Data:'}
 				key={i}
 				body={
-					adminAccess ? (
+					users.length > 0 && users[0].role === 'Admin' ? (
 						<>
 							<h4>Welcome {FirstOnly(obj.name)}</h4>
 							<h5> Your Personal Information:</h5>
@@ -61,6 +53,8 @@ function logStatus(user) {
 								<b>Full Name:</b> <i>{obj.name}</i>
 								<br />
 								<b>Total Balance:</b> ${obj.balance}
+								<br />
+								<b>Bank Role:</b> {obj.role}
 								<br />
 								<br />
 								Login Info: <br />•<b>UserName:</b> <i>{obj.email}</i> <br />•
@@ -82,14 +76,14 @@ function logStatus(user) {
 		);
 	}
 
-	return ( //TODO: DEVELOPMENT ONLY
+	return ( 
 		<>			
 			<div className="container-fluid">
 			<div className="row">{localCtx.map((obj, i) => display(obj, i))}</div>
 			</div>
 
 			<h5>For Dev Control: All data in store</h5>
-			{data}
+			{/* {data} // DEVELOPMENT ONLY */}
 		</>
 	);
 }

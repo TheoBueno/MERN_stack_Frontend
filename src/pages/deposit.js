@@ -1,6 +1,6 @@
 //import React from 'react';
 import { useState, useContext }   from 'react';
-import { Card, RecurringContext } from './context';
+import { Card, AppContext  } from './context';
 import axios from "axios";
 const backendUrl = process.env.REACT_APP_BACKEND_URL
 
@@ -9,7 +9,7 @@ export function Deposit() {
   const [dep, setDep]   = useState(0)
   const [disabled, setDisabled] = useState(true)
   const [status, setStatus]     = useState('')
-  const ctx = useContext(RecurringContext);
+  const ctx = useContext(AppContext );
 
 function validate(balance, dep) {
   if (isNaN(dep)) {
@@ -26,17 +26,17 @@ function validate(balance, dep) {
 }
 
 async function transaction(dep) {
-  const tran = await axios.get(`${backendUrl}/account/${ctx.users[1].email}/deposit/${dep}`)
+  const tran = await axios.get(`${backendUrl}/account/${ctx.users[0].email}/deposit/${dep}`)
   await console.log(tran.data)
 }
 
 function updateBalance() {
   let newBal = 0
-  newBal = ctx.users[1].balance
+  newBal = ctx.users[0].balance
   if (!validate(newBal, dep))      return;
   transaction(dep)
   newBal = newBal + Number(dep)
-  ctx.users[1].balance = newBal
+  ctx.users[0].balance = newBal
   setShow(false)
 }
 
@@ -54,14 +54,20 @@ function clearForm() {
       status  = {status}
       body    = {show ? (
         <>
-          <h3> Welcome {ctx.users[1].firstName}</h3>
+          <h3> Welcome {ctx.users.length > 0 && ctx.users[0].firstName}</h3>
           <br/>
-          <h5> Your current balance: ${ctx.users[1].balance}</h5>
+          <h5> Your current balance: ${ctx.users.length > 0 && ctx.users[0].balance}</h5>
           <br/>
           Deposit Amount<br/>
-          <input type="number" className="form-control" id="Deposit"
-          placeholder="Deposit Amount" min={0} value={dep}
-          onChange={e =>{setDisabled(false); setDep((e.target.value))}} />
+          <input 
+            type="number" 
+            className="form-control" 
+            id="Deposit"
+            placeholder="Deposit Amount" 
+            min={0} 
+            value={dep}
+            autoComplete="off"
+            onChange={e =>{setDisabled(false); setDep((e.target.value))}} />
           <br/>
           <button disabled={disabled}  type="submit" className="btn btn-light"
           onClick={updateBalance}>Deposit</button>
@@ -72,7 +78,7 @@ function clearForm() {
         <>
           <h5>Operation Successful!</h5> <br/>
           <p>Your funds have been deposited.</p>
-          <h5>New Balance: ${ctx.users[1].balance}</h5>
+          <h5>New Balance: ${ctx.users[0].balance}</h5>
 
           <button type="submit" className="btn btn-light" onClick=
           {clearForm}>Another Operation</button>

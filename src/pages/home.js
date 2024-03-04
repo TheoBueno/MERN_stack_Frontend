@@ -1,22 +1,46 @@
-//import React from 'react';
-import { useContext }   from 'react';
-import { Card, RecurringContext } from './context';
+import { useContext } from 'react';
+import { Card, AppContext } from './context';
+import Button from 'react-bootstrap/Button';
 
-export function Home(){
-  const ctx = useContext(RecurringContext);
-
+export function Home() {
+  const { users, logout } = useContext(AppContext); // Destructure users directly from the context
 
   return (
     <Card 
       bgcolor='secondary'
       txtcolor="warning"
       header="Bank Landing Page"
-      title={`Welcome ${ctx.users[1].firstName}, to the BigBadWolf Bank`}
-      
+      title={ users.length > 0 ? (
+        `Welcome ${ users[0].firstName}, to the BigBadWolf Bank`
+      ) : (
+        `Welcome to the BBWolf Bank`) 
+      }
+      text="You can use this bank at will."
+      // , please use the navigation above to register a new account or log in to your existing account"
+      body    = { users.length <= 0 ? (
+        <>
+        <img src="./IMG/bank.png" className="img-fluid home-pic" alt="Bank Logo"/>
 
-      text="You can use this bank at will, please use the navigation above to register a new account or login to your existing account"
-      body={(<img src="./IMG/bank.png" className="img-fluid" alt="Bank Logo"/>)}
-      footer={<b>Bank Robbery Safe for 364 days, 6 hours and 8 min</b>}
+        <a className="btn btn-primary" title="Login page"  href="#/Login" >Login</a> 
+        <a className="btn btn-primary" title="Account Creation page"  href="#/CreateAccount" >Create an Account</a> 
+        <br/>
+        </>      
+      ) : ( 
+        <>
+        <img src="./IMG/bank.png" className="img-fluid home-pic" alt="Bank Logo"/>
+
+        <a className="btn btn-success" title="Deposit page"  href="#/deposit" >Deposit</a> 
+        <a className="btn btn-warning" title="Withdraw page"  href="#/withdraw" >Withdraw</a>
+        <Button 
+          type="submit" 
+          title="Logout of Account"
+          className="btn btn-outline-light" 
+          onClick={logout}
+        > Logout
+        </Button>
+        </>      
+      )}
+      footer={<b>Bank Robbery Safe for 364 days!</b>}
     />
   )
 }

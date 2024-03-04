@@ -14,7 +14,6 @@ body {
   background-repeat: no-repeat;
   background-color: #413838;
   color: #fff;
-
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -45,4 +44,9 @@ body div #bankCard{
   margin-right: 5px;
   padding-left: 9px ;
   padding-right: 9px ;
+}
+
+.home-pic {
+  padding-top: 5px;
+  padding-bottom: 7px;
 }
