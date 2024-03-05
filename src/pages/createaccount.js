@@ -62,6 +62,8 @@ function CreateForm(props){
     } else if (string.includes(' ')) {
           let names = string.split(' ');
     return names[0];
+    } else {
+    return string 
     }
   }
 

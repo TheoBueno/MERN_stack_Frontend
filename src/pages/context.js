@@ -35,11 +35,13 @@ export const AppProvider  = ({ children }) => {
   };
 
   function FirstOnly(string) {
-    if (string === undefined) {
-      return;
+    if (string === undefined ) { 
+      return 
     } else if (string.includes(' ')) {
-      let names = string.split(' ');
-      return names[0];
+          let names = string.split(' ');
+    return names[0];
+    } else {
+    return string 
     }
   }
 
