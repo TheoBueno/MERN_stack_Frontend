@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { Card, AppContext }          from './context';
 
 export function AllData() {
-	const [data, setData] 							= useState('')
+	// const [data, setData] 							= useState('')
 	const [localCtx, setLocalCtx] 			= useState([])
 	const { users }											= useContext(AppContext);
 
@@ -16,7 +16,7 @@ useEffect(() => {
 		.then(data => {
 //			console.log('Data:', data); // for development only
 			setLocalCtx(data);
-			setData(JSON.stringify(data));
+			// setData(JSON.stringify(data));
 		});
 }, [backendUrl]);
 

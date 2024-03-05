@@ -89,9 +89,3 @@ function clearForm() {
     />
   )
 }
-
-// return(
-//   <h1>Deposit here $_____<br/>
-//   {JSON.stringify(ctx)}
-// </h1>
-// )

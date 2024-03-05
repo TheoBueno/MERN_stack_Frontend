@@ -5,10 +5,10 @@ import { Card, AppContext } from './context';
 
 
 export function CreateAccount(){
-  const [show, setShow]     = useState(true);
+  // const [show, setShow]     = useState(true);
   const [status, setStatus] = useState('');
   const ctx = useContext( AppContext );
-  const { currentUser }  = ctx
+  // const { currentUser }  = ctx
 
   return (
     <Card
@@ -16,8 +16,9 @@ export function CreateAccount(){
       header="Create Account"
       status={status}
       body  ={ ctx.users.length <= 0 ? 
-        <CreateForm setShow={setShow} setStatus={setStatus}/> : 
-        <CreateMsg setShow={setShow} setStatus={setStatus}/>}
+        <CreateForm /*setShow={setShow}*/ setStatus={setStatus}/> : 
+        
+        <CreateMsg /*setShow={setShow}*/ setStatus={setStatus}/>}
     />
   )
 }
@@ -119,7 +120,7 @@ function CreateForm(props){
       })();
 
 
-      props.setShow(false) 
+      // props.setShow(false) 
 
     } catch (error) {
       console.error('Failed to create account:', error);

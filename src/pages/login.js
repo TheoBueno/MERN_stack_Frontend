@@ -3,7 +3,7 @@ import { Card, AppContext  } from './context';
 import axios                               from "axios";
 
 export function Login() {
-  const [show, setShow]           = useState(true) 
+  // const [show, setShow]           = useState(true) 
   const [email, setEmail]         = useState('')
   const [password, setPassword]   = useState('')
   const [disabled, setDisabled]   = useState(true)
@@ -48,7 +48,7 @@ export function Login() {
     setStatus('')
     try{
       await logout()
-      setShow(true);
+//      setShow(true);
     }catch(error){
       console.error('Failed to logout:', error);
       setStatus('Failed to logout')
@@ -80,7 +80,7 @@ export function Login() {
         updateUsersWithFirstName(userData);
 
         loginAccess(email, password) // logs into firebase
-        setShow(false)
+        // setShow(false)
 
         console.log('ctx.user[0]', ctx.users.length > 0 ? ctx.users[0] : 'No users');
         console.log('ctx', ctx)
