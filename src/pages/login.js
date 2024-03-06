@@ -50,10 +50,11 @@ export function Login() {
     setStatus('')
     try{
       await logout()
-//      setShow(true);
+      // setShow(true);
     }catch(error){
       console.error('Failed to logout:', error);
       setStatus('Failed to logout')
+      setTimeout(() => setStatus(''), 3000);
     }
   }
 
@@ -88,10 +89,12 @@ export function Login() {
         console.log('ctx', ctx)
       }else{
         setStatus('Invalid email/password combination');
+        setTimeout(() => setStatus(''), 3000);
       }
     } catch (error) {        
       console.error('Error during login:', error);
       setStatus('Error during login. Please try again.');    
+      setTimeout(() => setStatus(''), 3000);
     }   
   }
 
@@ -103,7 +106,7 @@ export function Login() {
       status  = {status}
       body    = { ctx.users.length <= 0 ? (
         <>
-          <h5>Example Credentials</h5>
+          <h5>Admin Credentials for Exploration</h5>
           <p>login: ditto_boy@nintendo.js<br/>PW: copyeverything</p>
 
           <label>Email address:</label>
@@ -114,7 +117,7 @@ export function Login() {
             placeholder="Enter email"
             autoComplete="email"
             value={email} 
-            onChange={e =>{setDisabled(false); setEmail(e.target.value)}} 
+            onChange={e =>{setDisabled(false); setEmail(e.target.value.trim())}} 
           />
           <br/>
           <label>Password:</label>
@@ -125,7 +128,7 @@ export function Login() {
             placeholder="Enter password" 
             autoComplete="current-password"
             value={password} 
-            onChange={e =>{setDisabled(false); setPassword(e.target.value)}} 
+            onChange={e =>{setDisabled(false); setPassword(e.target.value.trim())}} 
           />
           <br/>
           <button 

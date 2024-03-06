@@ -11,16 +11,16 @@ export function NavBar(){
 
   return(
     <>
-    <Navbar expand="lg" className="navbar-dark bg-dark"> {/*classNames: sticky-top or bg-body-tertiary */}
+    <Navbar expand="lg" className="navbar-dark bg-dark"> 
       <div className="container-fluid">
       <Navbar.Brand href="#" className='hoverFX d-inline-block align-text-center'>
-        <img src="./IMG/Logo - Just Wolves.png" alt="Lobo-Guara Logo" width="35" height="35"/>{/*padding-right='5px'*/}{' '}
+        <img src="./IMG/Logo - Just Wolves.png" alt="Lobo-Guara Logo" width="35" height="35"/>
         BigBadWolf Bank
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto hoverFX">
-          <Nav.Link title="go to Home page"        href="#/">Home</Nav.Link> {/*classNames: nav-item  */}
+          <Nav.Link title="go to Home page"        href="#/">Home</Nav.Link> 
          {ctx.users.length <= 0 ? (
           <>
           <Nav.Link title="go to Account Creation" href="#/CreateAccount">Create Account</Nav.Link>

@@ -8,7 +8,7 @@ export function CreateAccount(){
   // const [show, setShow]     = useState(true);
   const [status, setStatus] = useState('');
   const ctx = useContext( AppContext );
-  // const { currentUser }  = ctx
+  const { currentUser }  = ctx
 
   return (
     <Card
@@ -148,7 +148,7 @@ function CreateForm(props){
       placeholder="Enter email" 
       autoComplete="email"
       value={email} 
-      onChange={e =>{setDisabled(false); setEmail(e.currentTarget.value)}} /><br/>
+      onChange={e =>{setDisabled(false); setEmail(e.currentTarget.value.trim())}} /><br/>
 
     Password<br/>
     <input type="password" 
@@ -157,7 +157,7 @@ function CreateForm(props){
       placeholder="Enter password"
       autoComplete="new-password" 
       value={password} 
-      onChange={e =>{setDisabled(false); setPassword(e.currentTarget.value)}}/><br/>
+      onChange={e =>{setDisabled(false); setPassword(e.currentTarget.value.trim())}}/><br/>
 
     Password Confirmation<br/>
     <input type="password" 
@@ -166,7 +166,7 @@ function CreateForm(props){
       placeholder="Confirm password" 
       autoComplete="new-password"
       value={passwordConfirm} 
-      onChange={e =>{setDisabled(false); setPasswordConfirm(e.currentTarget.value)}}/><br/>
+      onChange={e =>{setDisabled(false); setPasswordConfirm(e.currentTarget.value.trim())}}/><br/>
      
     <button disabled={disabled} type="submit" 
       className="btn btn-light" 

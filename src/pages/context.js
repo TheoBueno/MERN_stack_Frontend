@@ -45,7 +45,11 @@ export const AppProvider  = ({ children }) => {
     }
   }
 
-
+  const updateUsersWithFirstName = (userData) => {
+    const updatedUsers = [...users, userData];
+    updatedUsers[updatedUsers.length - 1].firstName = FirstOnly(userData.name);
+    setUsers(updatedUsers);
+  };
 
   // function signup(email, password) {
   //   return createUserWithEmailAndPassword(auth, email, password);
@@ -92,12 +96,6 @@ export const AppProvider  = ({ children }) => {
 
   useEffect(() => {
 
-    const updateUsersWithFirstName = (userData) => {
-      const updatedUsers = [...users, userData];
-      updatedUsers[updatedUsers.length - 1].firstName = FirstOnly(userData.name);
-      setUsers(updatedUsers);
-    };
-
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setCurrentUser(user);
       setLoading(false);
@@ -111,7 +109,7 @@ export const AppProvider  = ({ children }) => {
       }
     });
     return () => unsubscribe;
-  }, [users]);
+  }, []);
 
 
   const value = {
