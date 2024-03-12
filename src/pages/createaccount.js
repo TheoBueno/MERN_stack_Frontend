@@ -1,14 +1,12 @@
 //import React from 'react';
 import { useState, useContext }   from 'react';
 import { Card, AppContext } from './context';
-//import { app }                        from '../firebase';
-
 
 export function CreateAccount(){
   // const [show, setShow]     = useState(true);
   const [status, setStatus] = useState('');
   const ctx = useContext( AppContext );
-  const { currentUser }  = ctx
+  // const { currentUser }  = ctx
 
   return (
     <Card
