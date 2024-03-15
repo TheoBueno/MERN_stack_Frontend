@@ -59,7 +59,7 @@ export function Login() {
   }
 
   async function matchLogin() {
-    console.log('Login attempted - email:' + email + " pw:" + password)
+    console.log('Login attempted - email:' + email)
     if (!validate(email,    'email'))     return; 
     if (!validate(password, 'password'))  return; 
 
@@ -82,10 +82,9 @@ export function Login() {
 
         updateUsersWithFirstName(userData);
 
-        loginAccess(email, password) // logs into firebase
-        // setShow(false)
+        loginAccess(email, password) 
 
-        console.log('ctx.user[0]', ctx.users.length > 0 ? ctx.users[0] : 'No users');
+        console.log('ctx.user[0]', ctx.users.length > 0 ? ctx.users[0] : 'On Loading');
         console.log('ctx', ctx)
       }else{
         setStatus('Invalid email/password combination');
