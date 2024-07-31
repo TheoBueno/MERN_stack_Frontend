@@ -93,7 +93,7 @@ export const AppProvider  = ({ children }) => {
       throw error;
     }
   };
-
+ 
   useEffect(() => {
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
