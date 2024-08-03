@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AppContext  } from './context';
-
+ 
 export function NavBar(){
   const ctx = useContext( AppContext );
   const { logout }  = ctx
