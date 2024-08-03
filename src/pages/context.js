@@ -13,7 +13,7 @@ export function useAppContext() {
 }
 
 export const AppProvider  = ({ children }) => {
-
+ 
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
