@@ -8,7 +8,6 @@ export function AllData() {
 
   const backendUrl = process.env.REACT_APP_BACKEND_URL
 
-
 useEffect(() => {
 	// Fetch all accounts from API
 	fetch(`${backendUrl}/account/all`)
